@@ -27,7 +27,7 @@ let getStories = async() => {
     .then(function(data){ 
         let listParent = $("#parent");
         let newLI = $(`<li id='headline' ><a href='${data.url}' target = '_blank' style = "color: darkblue">${data.title} - by: ${data.by}</a></li>`);
-        let newP = $(`<p id='${data.id}' onclick = getComments(${data.id})> ${data.score} points - ${data.descendants} comments</a></p>`)
+        let newP = $(`<p id='scoreLine'><a href="https://news.ycombinator.com/item?id=${data.id}" target = '_blank' style = "color: gray"> ${data.score} points - ${data.descendants} comments</a></p>`)
         listParent.append(newLI);
         listParent.append(newP);
     })}}
